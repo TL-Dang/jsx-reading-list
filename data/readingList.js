@@ -1,21 +1,28 @@
-selectBook () {
+let books = []
+let selectedBook = {}
+
+module.exports = {
+  getBooks () {
+    return books
+  },
+  setBook (id) {
+    const index = books.findIndex(bookThing => bookThing.id === id)
+    selectedBook = books[index]
+  },
+  getBook () {
     return selectedBook
-},
-
-addBook (book) {
+  },
+  addBook (book) {
     books.push(book)
-},
-
-updateBook (id, book) {
-    const index = books.findIndex(bookItem =>
-        bookItem.id === id)
-        books[index] = book
-},
-
-deleteBook (id) {
-    const index = books.findIndex(bookItem =>
-        bookItem.id === id)
-        books.splice(index, 1)
+  },
+  updateBook (id, book) {
+    const index = books.findIndex(bookThing => bookThing.id === id)
+    books[index] = book
+  },
+  deleteBook (id) {
+    const index = books.findIndex(bookThing => bookThing.id === id)
+    books.splice(index, 1)
+  }
 }
 
 
