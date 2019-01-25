@@ -10,7 +10,7 @@ app.set('view engine', 'jsx')
 app.use(bodyparser.urlencoded({extended: true}))
 app.use(bodyparser.json())
 
-app.engine('jsx', require('express-react-views'.createEngine())
+app.engine('jsx', require('express-react-views').createEngine())
 
 require('./routes')(app)
 
